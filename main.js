@@ -1,3 +1,4 @@
+const start_date = new Date().getTime();
 const prompt = require("prompt-sync")();
 
 let score = 0;
@@ -57,6 +58,12 @@ for (let i = 0; i < soal.length; i++) {
     console.log("Jawaban Anda salah. Jawaban yang benar adalah: " + soal[i].a);
     jawaban_salah++;
   }
+  const end_date = new Date().getTime();
+  const result = Math.round((end_date - start_date) / 1000);
+
+  console.log("Waktu Mulai", start_date);
+  console.log("Waktu Selesai", end_date);
+  console.log("Jarak interval waktu mulai dan selesai", result, "detik");
 }
 
 console.log("Kuis selesai");
